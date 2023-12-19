@@ -1,0 +1,60 @@
+<style>
+  header {
+      background: linear-gradient(to bottom, #dcdcdc 0%, #d3d3d3 50%, #dcdcdc 100%);
+      padding: 16px 0;
+      text-align: center;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  nav {
+      display: flex;
+      justify-content: center;
+  }
+  
+  nav a {
+      display: inline-block;
+      padding: 8px 16px;
+      text-decoration: none;
+  }
+  
+  .menu {
+      display: none;
+      position: absolute;
+      min-width: 160px;
+      background-color: #f9f9f9; /* Add a background color */
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Add a shadow for a "tab" effect */
+  }
+  
+  .menu a {
+      display: block;
+  }
+  
+  .menus:hover .menu {
+      display: block;
+  }
+  </style>
+  
+  <main>
+  <header>
+    <h1>BULLETIN BOARD</h1>
+    <nav>
+      <a routerLink="/login">Login</a>
+      <div class="menus">
+        <a>Menu</a>
+        <div class="menu">
+          <a routerLink="/signup">New User</a>
+          <a routerLink="/display">Display all</a>
+          <a routerLink="/add">New Task</a>
+          <a (click)="logout()" style="cursor: pointer; text-decoration: underline; color: blue;">Logout</a>
+
+
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <br>
+  
+  <router-outlet></router-outlet>
+  </main>
+  

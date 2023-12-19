@@ -1,0 +1,53 @@
+
+//tests from the lab guide
+GET https://localhost:3000 HTTP/1.1
+###
+//test link before case study change 
+GET https://localhost:3000/api/gamefetch HTTP/1.1
+###
+//working link 
+GET https://localhost:3000/api/tasks HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ld3VzZXIiLCJ1c2VyaWQiOiI2NTFiYmUyZmJlY2EwNDRiNTJlOTBkZWUiLCJpYXQiOjE2OTgyMzIwMDAsImV4cCI6MTY5ODIzNTYwMH0.wQhf-UxDzM45eski9VjfsQd4UHJrznV7P_8twyl91b4
+###
+//test for first round
+POST https://localhost:3000/api/gamer HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "4",
+    "name": "GT sport"
+}
+//delete request with token for logged in users only 
+###
+
+DELETE https://localhost:3000/api/tasks/651bbe84beca044b52e90df1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ld3VzZXIiLCJ1c2VyaWQiOiI2NTFiYmUyZmJlY2EwNDRiNTJlOTBkZWUiLCJpYXQiOjE2OTgyMzIwMDAsImV4cCI6MTY5ODIzNTYwMH0.wQhf-UxDzM45eski9VjfsQd4UHJrznV7P_8twyl91b4
+// registration which requires the following fields according to the case study
+###
+POST  https://localhost:3000/api/users/signup    HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "newuser", 
+    "department":"roadworks",
+    "role":"Inspector",
+    "password": "mobile22"
+}
+###
+//login for the user 
+POST https://localhost:3000/api/users/login HTTP/1.1
+content-type: application/json 
+
+{"username": "newuser", 
+    "password": "mobile22"
+    } 
+// this posts the tasks to the database and is set up in accordance to the case study     
+###
+POST https://localhost:3000/api/tasks HTTP/1.1
+content-type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ld3VzZXIiLCJ1c2VyaWQiOiI2NTFiYmUyZmJlY2EwNDRiNTJlOTBkZWUiLCJpYXQiOjE2OTYzMjM5NjcsImV4cCI6MTY5NjMyNzU2N30.2P4wLgvMoCL4Gd_-_JKoxRc8HeoNKh3aQM3uWKeAddQ
+
+ { "task": "videotestpost",
+  "description": "this is to show everything works",
+  "status":"in progress" } 
+ ###

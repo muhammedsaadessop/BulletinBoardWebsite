@@ -1,0 +1,30 @@
+<style>
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
+    }
+  
+    td, th {
+      border: 1px solid black;
+      padding: 8px;
+    }
+  </style>
+  
+  <h1 style="text-align: center;">BULLETIN LIST</h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>TASK NAME</th>
+      <th>TASK DESCRIPTION</th>
+      <th>STATUS</th>
+      <th>OPTIONS</th>
+    </tr>
+    <tr *ngFor="let task of tasks">
+      <td>{{task._id}}</td>
+      <td>{{task.task}}</td>
+      <td>{{task.description}}</td>
+      <td>{{task.status}}</td>
+      <td><button (click)="ondelete(task._id)">Delete</button></td>
+    </tr>
+  </table>
+  
