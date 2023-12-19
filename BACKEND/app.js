@@ -13,7 +13,7 @@ const fs = require('fs');
 //here we call the ssl certifcates
 const cert = fs.readFileSync('keys/certificate.pem');
 const options = { server:{sslCA:cert}};
-const constring = 'mongodb+srv://st10090552:vwyRlWozAYDfa7ut@part2st10090552.bn9azou.mongodb.net/Part2ST10090552?retryWrites=true&w=majority'
+const constring = 'add your own key here'
 const taskroutes = require("./routes/tasks")
 const userroutes = require("./routes/user")
 app.use(helmetprotect());
